@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+/*-----GENERAL STYLE-----*/
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+.button {
+    background-color: rgb(94, 76, 83);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 6px 3px;
+    padding: 20px 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: rgb(41, 27, 41);
+}
+
+p {
+    margin: 0 20%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #5e4c53;
+    background-color: #fff8e9;
+    margin: 0;
+}
+
+h1{
+    font: bold 2.2em Garamond Serif;
+    color:#573b50;
+    text-shadow: .05em .05em .1em gray ;
+}
+
+h2{
+    font: bold 1.5em Garamond Serif;
+    text-transform: capitalize;
+    color:#8c53a7;
+    letter-spacing: .2em;
+}
+
+dt{
+    font-weight: bold;
+    color: #394f5e;
+}
+
+/*-----IMAGES-----*/
+img {
+    max-width: 100%;
+}
+
+/*-----NAV STYLE-----*/
+.main_nav{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: rgb(41, 27, 41);
+    padding: .3em;
+    margin: 0;
+}
+
+.main_nav a{
+    color: white;
+    padding: 60px 40px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main_nav a:hover{
+    background-color: white;
+    color: rgb(94, 76, 83);
+}
+
+li.logo{
+    margin-right: auto;
+}
+
+/*-----HERO IMAGE / HEADER-----*/
+.hero_image {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(images/abstract_bg.jpg);
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero_header {
+    text-align: left;
+    position: absolute;
+    color: white;
+    top: 40%;
+    text-shadow: .05em .05em .1em black;
+    font-size: 3em;
+    margin: 20px;
+}
+/*-----IMAGES-----*/
+img {
+    max-width: 100%;
+}
+
+#bigimg {
+    max-width: 100%;
+    max-height: 100%;
+    width: 500px;
+    height: 500px;
+}
+
+/*-----GRID - INDEX PAGE-----*/
+#container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    'welcome    welcome    welcome'
+    'hlight1    hlight2    hlight3'
+    'about      about      about'
+    'review     review     review'
+    ;
+}
+
+#welcome{
+    grid-area: welcome;
+    object-fit: cover;
+}
+
+#hlight1{
+    grid-area: hlight1;
+    object-fit: cover;
+}
+
+#hlight2{
+    grid-area: hlight2;
+    object-fit: cover;
+}
+
+#hlight3{
+    grid-area: hlight3;
+    object-fit: cover;
+}
+
+#about{
+    grid-area: about;
+    object-fit: cover;
+}
+
+#review{
+    grid-area: review;
+    object-fit: cover;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #5e4c53;
+    background-color: #fff8e9;
+    margin: 0;
+}
+
+/*-----GRID STYLE - INDEX PAGE-----*/
+#welcome, #review {
+    margin: 0px 15px 0px 30px;
+    padding: 25px 0px 25px 0px;
+}
+
+#hlight1, #hlight2, #hlight3 {
+    margin: 20px;
+}
+
+#about {
+    margin: 25px;
+}
+
+/*-----MEDIA QUERIES-----*/
+@media screen and (max-width;1200px) {
+    #container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        'welcome    welcome    welcome'
+        'hlight1    hlight2    hlight3'
+        'about      about      about'
+        'review     review     review'
+        ;
+    }
+}
+
+@media screen and (max-width:800px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        'welcome welcome'
+        'hlight1 hlight2'
+        'hlight3 hlight3'
+        'about about'
+        'review review'
+        ;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: 
+        'welcome'
+        'hlight1' 
+        'hlight2'
+        'hlight3'
+        'about'
+        'review'
+        ;
+    }
+}
